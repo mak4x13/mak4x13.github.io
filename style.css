@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@600;700&display=swap');
 
 :root {
     --primary-color: #6a11cb;
@@ -16,6 +16,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--body-font);
     background-color: var(--background-color);
@@ -23,13 +27,18 @@ body {
     line-height: 1.6;
 }
 
+/* =================================== */
+/*    SHARED STYLES (HEADER & FOOTER)  */
+/* =================================== */
+
 header {
-    background-color: var(--surface-color);
+    background-color: rgba(30, 30, 30, 0.85); /* Added transparency for a modern feel */
     padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
 }
 
 nav {
@@ -41,7 +50,7 @@ nav {
 nav .logo {
     font-family: var(--header-font);
     font-size: 1.8rem;
-    font-weight: 600;
+    font-weight: 700; /* Bolder for more impact */
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -70,16 +79,202 @@ nav ul li a::after {
     position: absolute;
     width: 0;
     height: 3px;
-    bottom: 0;
-    left: 0;
+    bottom: -5px; 
+    left: 50%;
+    transform: translateX(-50%);
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transition: width 0.3s ease;
+    transition: width 0.4s ease;
 }
 
 nav ul li a:hover::after,
 nav ul li a.active::after {
     width: 100%;
 }
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: var(--surface-color);
+    border-top: 1px solid #333;
+}
+
+
+/* =================================== */
+/*      INDEX PAGE STYLES          */
+/* =================================== */
+
+/* Hero Section for Index Page */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 4rem 5%;
+}
+
+.hero-text h1, .hero-text h2 {
+    font-family: var(--header-font);
+    margin: 0;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin: 1rem 0 2rem;
+    font-weight: 600;
+    color: #b0b0b0;
+}
+
+.hero-text .typing {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hero Text Load-in Animation */
+.hero-text .line1 { animation: slideIn 1s forwards; opacity: 0; }
+.hero-text .line2 { animation: slideIn 1s 0.5s forwards; opacity: 0; }
+.hero-text .line3 { animation: slideIn 1s 1s forwards; opacity: 0; }
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* CTA buttons for Hero Section */
+.cta-buttons .cta-button {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-buttons .cta-button.secondary {
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+}
+
+.cta-buttons .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* "About Me" and "Profiles" Section Styling for Index Page */
+.section-title {
+    text-align: center;
+    font-family: var(--header-font);
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-section {
+    padding: 6rem 5%;
+}
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.about-text-container {
+    flex: 2;
+    max-width: 650px;
+    font-size: 1.45rem;
+    text-align: justify;
+}
+
+
+
+.about-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%; /* This makes the square a circle */
+
+    background-image: url('photo.jpg'); 
+    background-size: contain;     
+    background-position: center;  
+    background-repeat: no-repeat; 
+    
+    background-color: var(--surface-color); 
+ 
+    border: 5px solid var(--primary-color);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-photo:hover {
+    transform: scale(1.05);
+    border-color: var(--secondary-color);
+}
+
+.profiles {
+    padding: 4rem 5% 6rem;
+}
+
+.profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* .profile-box styling */
+.profile-box {
+    background: var(--surface-color);
+    border-radius: 15px;
+    width: 280px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #333;
+}
+
+.profile-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: var(--secondary-color);
+}
+
+.profile-box a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.profile-box img {
+    height: 40px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.profile-box:hover img {
+    transform: scale(1.1);
+}
+
+.profile-box h3 {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
 
 main {
     padding: 4rem 5%;
@@ -93,71 +288,6 @@ main {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-/* About Me Page */
-.about-me-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.intro h1 {
-    font-family: var(--header-font);
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.intro .subtitle {
-    font-size: 1.5rem;
-    color: #a0a0a0;
-    margin-bottom: 2rem;
-}
-
-.intro .about-text {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-}
-
-.profiles {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-}
-
-.profile-box {
-    background: var(--surface-color);
-    border-radius: 15px;
-    width: 250px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #333;
-}
-
-.profile-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.profile-box a {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.profile-box img {
-    height: 40px;
-    margin-bottom: 1rem;
-}
-
-.profile-box h3 {
-    font-family: var(--header-font);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
 }
 
 /* Experience Page (Timeline) */
@@ -184,13 +314,8 @@ main {
     width: 50%;
 }
 
-.timeline-item:nth-child(odd) {
-    left: 0;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-}
+.timeline-item:nth-child(odd) { left: 0; }
+.timeline-item:nth-child(even) { left: 50%; }
 
 .timeline-item::after {
     content: '';
@@ -205,9 +330,7 @@ main {
     z-index: 1;
 }
 
-.timeline-item:nth-child(even)::after {
-    left: -10px;
-}
+.timeline-item:nth-child(even)::after { left: -10px; }
 
 .timeline-content {
     padding: 20px 30px;
@@ -231,13 +354,9 @@ main {
     margin-bottom: 1rem;
     display: block;
 }
+.timeline-content ul { list-style-position: inside; }
 
-.timeline-content ul {
-    list-style-position: inside;
-}
-
-
-/* Education & Skills */
+/* Original Education & Skills */
 .education-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -252,16 +371,14 @@ main {
     border-left: 5px solid var(--primary-color);
 }
 
-.education-card h2 {
-    font-family: var(--header-font);
-}
+.education-card h2 { font-family: var(--header-font); }
 .education-card .institution {
     font-weight: 700;
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 .education-card .duration {
-     font-style: italic;
+    font-style: italic;
     color: #a0a0a0;
     margin-bottom: 1rem;
 }
@@ -276,9 +393,7 @@ main {
     border-radius: 5px;
     transition: transform 0.2s ease;
 }
-.cta-button:hover {
-    transform: scale(1.05);
-}
+.cta-button:hover { transform: scale(1.05); }
 
 .skills-section h2 {
     text-align: center;
@@ -322,8 +437,7 @@ main {
 .project-card h2 {
     font-family: var(--header-font);
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
+    color: var(--secondary-color);
 
 .project-card .project-type {
     font-style: italic;
@@ -336,22 +450,13 @@ main {
    flex-grow: 1;
 }
 
-.project-card ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
-    background-color: var(--surface-color);
-}
+.project-card ul li { margin-bottom: 0.5rem; }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
+        gap: 1rem;
     }
     nav ul {
         margin-top: 1rem;
@@ -360,21 +465,19 @@ footer {
         margin: 0 1rem;
     }
 
-    .timeline::after {
-        left: 31px;
-    }
+    /* hero responsive styles */
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text h2 { font-size: 1.8rem; }
+    .about-content { flex-direction: column-reverse; }
 
+
+    /* timeline responsive styles */
+    .timeline::after { left: 31px; }
     .timeline-item {
         width: 100%;
         padding-left: 70px;
         padding-right: 25px;
     }
-
-    .timeline-item:nth-child(even) {
-        left: 0%;
-    }
-
-    .timeline-item::after {
-        left: 15px;
-    }
+    .timeline-item:nth-child(even) { left: 0%; }
+    .timeline-item::after { left: 15px; }
 }
