@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research | Muneeb Ahmed Khan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="content-page">
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">MAK</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">MENU</button>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Research</p>
+    <h1>Research</h1>
+    <p>First-author work spanning biometric security, climate forecasting, and perception under adverse conditions, each evaluated against a measurable baseline.</p>
+  </div>
+</header>
+
+<section class="reveal" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h3>Smart Security Framework: A Pose-Aware Multi-Stage Enrollment and Recognition System</h3>
+          <p class="card-sub">First Author</p>
+        </div>
+        <div class="card-meta">
+          <span class="status published">Published</span>
+          <span>IEEE Xplore &middot; May 2026</span>
+        </div>
+      </div>
+      <p class="desc">Facial biometric enrollment often accepts poor or partial pose data, weakening downstream recognition. This paper introduces a multi-stage enrollment pipeline that validates head pose in real time against defined constraints before any sample is embedded into the stored representation, improving enrollment quality without adding manual review.</p>
+      <div class="metric-row">
+        <div class="metric">Recognition Accuracy<b><span class="arrow">78% →</span> 96%</b></div>
+        <div class="metric">False Rejection Rate<b><span class="arrow">20.4% →</span> 2.0%</b></div>
+      </div>
+      <div class="tags">
+        <span class="tag">OpenCV</span><span class="tag">MediaPipe</span><span class="tag">FaceNet</span><span class="tag">Vector DB</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h3>Multimodal Deep Learning Approaches for Monthly Temperature Anomaly Prediction over Pakistan: An Empirical Evaluation</h3>
+          <p class="card-sub">First Author</p>
+        </div>
+        <div class="card-meta">
+          <span class="status accepted">Accepted (with revisions)</span>
+          <span>ICICAM 2026, MyJCAM Track</span>
+          <span>UniSZA, Malaysia</span>
+        </div>
+      </div>
+      <p class="desc">A branch-based deep learning architecture (LSTM, CNN, MLP) fuses ERA5 atmospheric reanalysis, MODIS satellite imagery, and ENSO/IOD climate indices to forecast regional temperature anomalies. Model performance is benchmarked against statistical baselines (SARIMA, linear regression) using skill-score evaluation across 19 years of gridded climate data.</p>
+      <div class="metric-row">
+        <div class="metric">Time Coverage<b>2001 to 2019</b></div>
+        <div class="metric">Monthly Time Steps<b>228</b></div>
+        <div class="metric">Spatial Grid<b>29 × 35</b></div>
+      </div>
+      <div class="tags">
+        <span class="tag">LSTM</span><span class="tag">CNN</span><span class="tag">MLP</span><span class="tag">ERA5</span><span class="tag">MODIS</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div>
+          <h3>Beyond Architecture: A Two-Stage Training for Object Detection in Autonomous Driving Under Adverse Conditions</h3>
+          <p class="card-sub">First Author</p>
+        </div>
+        <div class="card-meta">
+          <span class="status review">Under Review</span>
+          <span>IEEE FIT 2026</span>
+        </div>
+      </div>
+      <p class="desc">A two-stage curriculum training pipeline pretrains YOLOv8n on adverse-condition imagery (ACDC), then fine-tunes on a large driving dataset, improving detection under rain, night, and dawn or dusk conditions beyond a clear-weather baseline. The work also introduces a ground-truth-free Temporal Consistency Score for evaluating frame-to-frame prediction stability in video.</p>
+      <div class="metric-row">
+        <div class="metric">mAP50<b><span class="arrow">0.344 →</span> 0.498</b></div>
+        <div class="metric">Fine-tuning Set<b>34,277 images</b></div>
+        <div class="metric">Held-out Test Set<b>20,000 images</b></div>
+      </div>
+      <div class="tags">
+        <span class="tag">YOLOv8n</span><span class="tag">PyTorch</span><span class="tag">ACDC</span><span class="tag">BDD100K</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fmono">© 2026 Muneeb Ahmed Khan · Sialkot, Pakistan</div>
+    <div class="fmono">
+      <a class="contact" href="mailto:muneebkhan4298@gmail.com">muneebkhan4298@gmail.com</a>
+      &nbsp;·&nbsp;
+      <a class="contact" href="https://github.com/mak4x13" target="_blank" rel="noopener">github.com/mak4x13</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
