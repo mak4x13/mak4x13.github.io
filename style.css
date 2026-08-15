@@ -188,6 +188,12 @@ img{ max-width:100%; display:block; }
   flex-wrap:nowrap;
   margin-top:34px;
 }
+.hero-actions .btn,
+.hero-actions .social-btn{
+  width:172px;
+  min-height:54px;
+  justify-content:center;
+}
 .btn{
   font-family:var(--mono);
   font-size:14px;
